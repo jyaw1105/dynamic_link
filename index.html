@@ -32,7 +32,7 @@ var isMobile = {
         return navigator.userAgent.match(/IEMobile/i) || navigator.userAgent.match(/WPDesktop/i);
     },
     Huawei: function() {
-        return navigator.userAgent.match(/HMS/i) || navigator.userAgent.match(/GMS/i);
+        return navigator.userAgent.match(/HMS|GMS/i);
     },
     any: function() {
         return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows() || isMobile.Huawei());
