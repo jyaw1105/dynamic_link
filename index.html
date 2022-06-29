@@ -30,19 +30,29 @@ var isMobile = {
     Windows: function() {
         return navigator.userAgent.match(/IEMobile/i) || navigator.userAgent.match(/WPDesktop/i);
     },
+    Huawei: function() {
+        return navigator.userAgent.match(/HMS/i) || navigator.userAgent.match(/GMS/i);
+    },
     any: function() {
-        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows() || isMobile.Huawei());
     }
 };
     document.getElementById("android").innerHTML = isMobile.Android() != null;
     document.getElementById("ios").innerHTML = isMobile.iOS() != null;
     document.getElementById("blackberry").innerHTML = isMobile.BlackBerry() != null;
     document.getElementById("opera").innerHTML = isMobile.Opera() != null;
-    document.getElementById("windows").innerHTML = isMobile.Windows() != null;
+    document.getElementById("windows").innerHTML = isMobile.Windows() != null
+    document.getElementById("huawei").innerHTML = isMobile.Huawei() != null;
     document.getElementById("any").innerHTML = isMobile.any() != null;
+    
     if(isMobile.Android()){
         const url = "bzforce://dfs.com/#Intent;scheme=BZForce;package=com.dfs.busspal;end";
         window.location.replace(url);
+        setTimeout(() => {
+//           url = "https://play.google.com/store/apps/details?id=com.dfs.busspal";
+            url = 'market://details?id=com.dfs.busspal';
+          window.location.replace(url);
+        }, 10000);
     }
     if(isMobile.iOS()){
 //         window.location.replace("BZ Force"); 
@@ -50,6 +60,14 @@ var isMobile = {
         // Wait 10s and redirect to App Store if app was not opened
         setTimeout(() => {
           window.location.replace("https://apps.apple.com/my/app/bz-force/id1597679916?uo=4"); 
+        }, 10000);
+    }
+    if(isMobile.Huawei()){
+        window.location.replace("bzforce://dfs.com/BZ111");
+        // Wait 10s and redirect to App Store if app was not opened
+        setTimeout(() => {
+          const url = "appmarket://details?id=com.dfs.busspal";
+            window.location.replace(url);
         }, 10000);
     }
 </script>
