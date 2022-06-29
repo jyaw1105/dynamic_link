@@ -30,6 +30,15 @@ var isMobile = {
 };
     document.getElementById("sample").innerHTML = isMobile.any() != null;
     if(isMobile.Android()){
-        window.open('bzforce://dfs.com');
+        const url = "bzforce://dfs.com/#Intent;scheme=BZForce;package=com.dfs.busspal;end";
+        window.location.replace(url);
+    }
+    if(isMobile.iOS()){
+        window.location.replace("BZ Force"); 
+
+        // Wait 10s and redirect to App Store if app was not opened
+        setTimeout(() => {
+          window.location.replace("https://apps.apple.com/my/app/bz-force/id1597679916?uo=4"); 
+        }, 10000);
     }
 </script>
