@@ -4,6 +4,7 @@
         <title>DYNAMIC</title>
     </head>
     <body id='sample'>
+        <p>User Agent <span id='useragent'></span></p>
         <p>Android <span id='android'></span></p>
         <p>IOS <span id='ios'></span></p>
         <p>Blackberry <span id='blackberry'></span></p>
@@ -45,7 +46,7 @@ var isMobile = {
     document.getElementById("windows").innerHTML = isMobile.Windows() != null
     document.getElementById("huawei").innerHTML = isMobile.Huawei() != null;
     document.getElementById("any").innerHTML = isMobile.any() != null;
-    
+    document.getElementById("useragent").innerHTML = window.navigator.userAgent;
     if(isMobile.Android()){
         const url = "bzforce://dfs.com/BZ111";
         window.location.replace(url);
