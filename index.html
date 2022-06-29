@@ -4,6 +4,12 @@
         <title>DYNAMIC</title>
     </head>
     <body id='sample'>
+        <p>Android <span id='android'></span></p>
+        <p>IOS <span id='ios'></span></p>
+        <p>Blackberry <span id='blackberry'></span></p>
+        <p>Opera <span id='opera'></span></p>
+        <p>Windows <span id='windows'></span></p>
+        <p>any <span id='any'></span></p>
     </body>
 </html>
 
@@ -28,7 +34,12 @@ var isMobile = {
         return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
     }
 };
-    document.getElementById("sample").innerHTML = isMobile.any() != null;
+    document.getElementById("android").innerHTML = isMobile.Android() != null;
+    document.getElementById("ios").innerHTML = isMobile.iOS() != null;
+    document.getElementById("blackberry").innerHTML = isMobile.BlackBerry() != null;
+    document.getElementById("opera").innerHTML = isMobile.Opera() != null;
+    document.getElementById("windows").innerHTML = isMobile.Windows() != null;
+    document.getElementById("any").innerHTML = isMobile.any() != null;
     if(isMobile.Android()){
         const url = "bzforce://dfs.com/#Intent;scheme=BZForce;package=com.dfs.busspal;end";
         window.location.replace(url);
