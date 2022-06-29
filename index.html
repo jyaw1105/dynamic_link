@@ -6,9 +6,9 @@
     <body id='sample'>
 <!--         <img src="https://play-lh.googleusercontent.com/4-s5sbW7SpzBUZ3ZfTYJ2LSl2hp4sxeKtrvyHRq_aCNXXZjc_wCxuEZbBA88Pl0bYnY" width="50" height="50" /> -->
     <div>
-        <img src="https://www.seekpng.com/png/detail/337-3379411_appstore-badge-app-store-logo-white.png" width="150" />
-        <img src="https://www.kindpng.com/picc/m/167-1679882_play-store-icon-android-app-on-google-play.png" width="150" />
-        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Huawei_AppGallery_white_badge_EN.png" width="150" />
+        <img src="https://www.seekpng.com/png/detail/337-3379411_appstore-badge-app-store-logo-white.png" width="150" onclick="window.open(googleUrl)"/>
+        <img src="https://www.kindpng.com/picc/m/167-1679882_play-store-icon-android-app-on-google-play.png" width="150" onclick="window.open(appstoreUrl)"/>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Huawei_AppGallery_white_badge_EN.png" width="150" onclick="window.open(galleryUrl)" />
     </div>
 <!--         <p>User Agent <span id='useragent'></span></p>
         <p>Android <span id='android'></span></p>
@@ -45,6 +45,9 @@ var isMobile = {
         return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows() || isMobile.Huawei());
     }
 };
+    const googleUrl = "https://play.google.com/store/apps/details?id=com.dfs.busspal";
+    const appstoreUrl = "https://apps.apple.com/my/app/bz-force/id1597679916?uo=4";
+    const galleryUrl = "https://appgallery.cloud.huawei.com/marketshare/app/C105118919";
     document.getElementById("android").innerHTML = isMobile.Android() != null;
     document.getElementById("ios").innerHTML = isMobile.iOS() != null;
     document.getElementById("blackberry").innerHTML = isMobile.BlackBerry() != null;
