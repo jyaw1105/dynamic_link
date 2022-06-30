@@ -11,13 +11,13 @@
         <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Huawei_AppGallery_white_badge_EN.png" width="150" onclick="window.open(galleryUrl)" />
     </div>
         <p>User Agent <span id='useragent'></span></p>
-        <p>Android <span id='android'></span></p>
+<!--         <p>Android <span id='android'></span></p>
         <p>IOS <span id='ios'></span></p>
         <p>Blackberry <span id='blackberry'></span></p>
         <p>Opera <span id='opera'></span></p>
         <p>Windows <span id='windows'></span></p>
         <p>Huawei <span id='huawei'></span></p>
-        <p>any <span id='any'></span></p>
+        <p>any <span id='any'></span></p> -->
     </body>
 </html>
 
@@ -48,16 +48,14 @@ var isMobile = {
     const googleUrl = "https://play.google.com/store/apps/details?id=com.dfs.busspal";
     const appstoreUrl = "https://apps.apple.com/my/app/bz-force/id1597679916?uo=4";
     const galleryUrl = "https://appgallery.cloud.huawei.com/marketshare/app/C105118919";
-    document.getElementById("android").innerHTML = isMobile.Android() != null;
-    document.getElementById("ios").innerHTML = isMobile.iOS() != null;
-    document.getElementById("blackberry").innerHTML = isMobile.BlackBerry() != null;
-    document.getElementById("opera").innerHTML = isMobile.Opera() != null;
-    document.getElementById("windows").innerHTML = isMobile.Windows() != null
-    document.getElementById("huawei").innerHTML = isMobile.Huawei() != null;
-    document.getElementById("any").innerHTML = isMobile.any() != null;
-    if(window.navigator.userAgent){
-        document.getElementById("useragent").innerHTML = window.navigator.userAgent;
-    }
+//     document.getElementById("android").innerHTML = isMobile.Android() != null;
+//     document.getElementById("ios").innerHTML = isMobile.iOS() != null;
+//     document.getElementById("blackberry").innerHTML = isMobile.BlackBerry() != null;
+//     document.getElementById("opera").innerHTML = isMobile.Opera() != null;
+//     document.getElementById("windows").innerHTML = isMobile.Windows() != null
+//     document.getElementById("huawei").innerHTML = isMobile.Huawei() != null;
+//     document.getElementById("any").innerHTML = isMobile.any() != null;
+    document.getElementById("useragent").innerHTML = window.navigator.userAgent;
     if(isMobile.Android()){
         const url = "bzforce://dfs.com/BZ111";
         window.location.replace(url);
