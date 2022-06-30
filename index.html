@@ -55,7 +55,9 @@ var isMobile = {
     document.getElementById("windows").innerHTML = isMobile.Windows() != null
     document.getElementById("huawei").innerHTML = isMobile.Huawei() != null;
     document.getElementById("any").innerHTML = isMobile.any() != null;
-    document.getElementById("useragent").innerHTML = window.navigator.userAgent;
+    if(window.navigator.userAgent){
+        document.getElementById("useragent").innerHTML = window.navigator.userAgent;
+    }
     if(isMobile.Android()){
         const url = "bzforce://dfs.com/BZ111";
         window.location.replace(url);
